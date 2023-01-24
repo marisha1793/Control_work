@@ -8,21 +8,32 @@ string[]array = CreateArray();
 PrintArray(array);
 Console.WriteLine();
 Console.WriteLine("Из всего списка оставим только те, чья длина не более 3 символов: ");
-SortArray(array);
+string[]newArray = SortArray(array);
+PrintArray(newArray);
 
-void SortArray(string[] array)
+
+string[] SortArray(string[] array)
 {
+    int index = 0;
+    string[] newArray = new string [array.Length];
     for (var i = 0; i < array.Length; i++)
     {
-        if (array[i].Length < 4)
+        if (array[i].Length <= 3)
         {
-            Console.Write($"{array[i]} ");
+            
+            newArray[index] = array[i];
+            if (i != array.Length-1)
+            {
+                index++; 
+            }
         }
+        
     }
+    return newArray;
 }
 
 
-void PrintArray(string[] array)
+void PrintArray(string[]array)
 {
     Console.Write("[");
     for (var i = 0; i < array.Length-1; i++)
@@ -40,6 +51,6 @@ string[] CreateArray()
     array[1] = "hi";
     array[2] = "bye";
     array[3] = "one";
-    array[4] = "ho";
+    array[4] = "hoho";
     return array;
 }
