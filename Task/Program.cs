@@ -18,16 +18,11 @@ string[] SortArray(string[] array)
     string[] newArray = new string [array.Length];
     for (var i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length < 4)
         {
-            
             newArray[index] = array[i];
-            if (i != array.Length-1)
-            {
-                index++; 
-            }
+            index++; 
         }
-        
     }
     return newArray;
 }
