@@ -15,7 +15,8 @@ PrintArray(newArray);
 string[] SortArray(string[] array)
 {
     int index = 0;
-    string[] newArray = new string [array.Length];
+    int number = array.Length;
+    string[] newArray = new string [number];
     for (var i = 0; i < array.Length; i++)
     {
         if (array[i].Length < 4)
@@ -28,15 +29,12 @@ string[] SortArray(string[] array)
 }
 
 
-void PrintArray(string[]array)
+void PrintArray(string[]ar)
 {
-    Console.Write("[");
-    for (var i = 0; i < array.Length-1; i++)
+    for (var i = 0; i < ar.Length; i++)
     {
-        Console.Write($"{array[i]}, ");
+        Console.Write($"{ar[i]} ");
     }
-    Console.Write(array[array.Length-1]);
-    Console.Write("]");
 }
 
 string[] CreateArray()
